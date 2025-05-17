@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Church Leadership - ACK St Joseph Kamakwa Parish</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      user-select: none;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    nav {
+      background-color: #00509e;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+      gap: 30px;
+      user-select: none;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1em;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover,
+    nav a:focus-visible {
+      background-color: #003f7f;
+      outline: none;
+    }
+
+    /* Hamburger menu button */
+    .menu-toggle {
+      display: none;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 8px 12px;
+      color: white;
+      font-size: 1.5rem;
+      user-select: none;
+    }
+
+    .menu-toggle:focus-visible {
+      outline: 2px dashed #003366;
+      outline-offset: 2px;
+    }
+
+    /* Container for links */
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      flex-grow: 1;
+      justify-content: center;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 700px) {
+      nav {
+        justify-content: space-between;
+        padding: 10px 15px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #00509e;
+        margin-top: 8px;
+        padding: 10px 0;
+        border-radius: 0 0 8px 8px;
+        gap: 10px;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      nav a {
+        width: 100%;
+        padding: 12px 20px;
+        border-radius: 0;
+        text-align: center;
+      }
+    }
+
+    .leadership-section {
+      padding: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .leadership-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .leader-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      padding: 1.2rem;
+      transition: transform 0.2s ease;
+    }
+
+    .leader-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .leader-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    .leader-card h3 {
+      margin: 0.3rem 0;
+      color: #003366;
+    }
+
+    .leader-card p {
+      margin: 0;
+      color: #00509e;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .back-home {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .back-home a {
+      background-color: #00509e;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      user-select: none;
+    }
+
+    .back-home a:hover,
+    .back-home a:focus-visible {
+      background-color: #003f7f;
+      outline: none;
+    }
+
+    .back-home a:focus-visible {
+      outline: 2px dashed #003366;
+      outline-offset: 2px;
+    }
+
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+      user-select: none;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Church Leadership</h1>
+  </header>
+
+  <nav role="navigation" aria-label="Main navigation">
+    <button 
+      class="menu-toggle" 
+      aria-expanded="false" 
+      aria-controls="primary-navigation" 
+      aria-label="Toggle menu"
+    >
+      ☰
+    </button>
+    <div class="nav-links" id="primary-navigation">
+      <a href="services.html">Services</a>
+      <a href="contacts.html">Contact</a>
+      <a href="ministries.html">Ministries</a>
+      <a href="sermons.html">Sermons</a>
+      <a href="events.html">Events</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="location.html">Location</a>
+      <a href="donate.html">Donate</a>
+    </div>
+  </nav>
+
+  <section class="leadership-section">
+    <div class="leadership-grid">
+      <article class="leader-card">
+        <img src="https://via.placeholder.com/100" alt="Rev. Simon K. Gichure - Parish Vicar" />
+        <h3>Rev. Simon K. Gichure</h3>
+        <p>Parish Vicar</p>
+      </article>
+
+      <article class="leader-card">
+        <img src="https://via.placeholder.com/100" alt="Phyllis Migwi - Mother’s Union Chair" />
+        <h3>Phyllis Migwi</h3>
+        <p>Mother’s Union Chair</p>
+      </article>
+
+      <article class="leader-card">
+        <img src="https://via.placeholder.com/100" alt="Johnson Githongo - KAMA Leader" />
+        <h3>Johnson Githongo</h3>
+        <p>KAMA Leader</p>
+      </article>
+
+      <article class="leader-card">
+        <img src="https://via.placeholder.com/100" alt="Charles Kiragu - Youth Chairman" />
+        <h3>Charles Kiragu</h3>
+        <p>Youth Chairman</p>
+      </article>
+
+      <article class="leader-card">
+        <img src="https://via.placeholder.com/100" alt="Madam Sera - Sunday School Teacher" />
+        <h3>Madam Sera</h3>
+        <p>Sunday School Teacher</p>
+      </article>
+    </div>
+  </section>
+
+  <div class="back-home">
+    <a href="index.html">⬅ Back to Home</a>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 ACK St Joseph Kamakwa Parish</p>
+    <p><a href="tel:+2547XXXXXX">Call Us</a> | 
+       <a href="mailto:email@parish.org">Email</a></p>
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.getElementById('primary-navigation');
+
+    menuToggle.addEventListener('click', () => {
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', !expanded);
+      navLinks.classList.toggle('show');
+    });
+  </script>
+
+</body>
+</html>

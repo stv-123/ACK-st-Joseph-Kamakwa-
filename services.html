@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Our Services - ACK St Joseph Kamakwa Parish</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    /* Navigation styles */
+    nav {
+      background-color: #2c3e50;
+      overflow: hidden;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    nav a {
+      color: white;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+      flex: 1 0 auto;
+      max-width: 150px;
+      box-sizing: border-box;
+    }
+    nav a:hover,
+    nav a.active {
+      background-color: #4CAF50;
+    }
+    /* Hamburger menu */
+    nav a.icon {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+      flex: 0 0 auto;
+      max-width: none;
+    }
+    /* Responsive styles */
+    @media screen and (max-width: 768px) {
+      nav {
+        justify-content: flex-start;
+      }
+      nav a:not(.icon) {
+        display: none;
+        width: 100%;
+        border-top: 1px solid #444;
+        text-align: left;
+        padding-left: 20px;
+      }
+      nav a.icon {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 14px 20px;
+        background-color: #2c3e50;
+      }
+      nav.responsive a:not(.icon) {
+        display: block;
+      }
+      nav.responsive {
+        position: relative;
+      }
+    }
+
+    header {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+    .content {
+      max-width: 800px;
+      margin: 30px auto;
+      background: white;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #003366;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    a.back-home {
+      color: white;
+      background-color: #00509e;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      display: inline-block;
+      margin: 30px auto;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    a.back-home:hover,
+    a.back-home:focus {
+      background-color: #003d73;
+      outline: none;
+    }
+    .center {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Responsive Navigation -->
+  <nav id="myNav" role="navigation" aria-label="Main Navigation">
+    <a href="index.html" class="active" aria-current="page">Home</a>
+    <a href="sermons.html">Sermons</a>
+    <a href="events.html">Events</a>
+    <a href="ministries.html">Ministries</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="location.html">Location</a>
+    <a href="announcements.html">Announcements</a>
+    <a href="leadership.html">Leadership</a>
+    <a href="javascript:void(0);" class="icon" aria-label="Toggle navigation menu" onclick="toggleMenu()" onkeydown="if(event.key==='Enter' || event.key===' ') { toggleMenu(); event.preventDefault(); }" tabindex="0">&#9776;</a>
+  </nav>
+
+  <header>
+    <h1>Our Services</h1>
+    <p><a href="index.html" class="back-home" aria-label="Back to home page">⬅ Back to Home</a></p>
+  </header>
+
+  <main class="content" tabindex="0">
+    <h2>Weekly Services</h2>
+    <ul>
+      <li><strong>English Service:</strong> 9:00 AM - 10:15 AM </li>
+      <li><strong>Kikuyu School:</strong> 10:30 AM - 12:30 PM</li>
+      <li><strong>Sunday school service</strong> during the main service</li>
+      <li><strong>Youth Fellowship:</strong> Saturdays at 4:00 PM - 6:00 PM</li>
+      <li><strong>Midweek Vicar Meeting:</strong> Wednesdays at 9:00 AM</li>
+    </ul>
+
+    <h2>Special Events</h2>
+    <ul>
+      <li>Baptisms</li>
+      <li>Weddings</li>
+      <li>Funeral Services</li>
+    </ul>
+  </main>
+
+  <div class="center">
+    <a href="index.html" class="back-home" aria-label="Back to home page">⬅ Back to Home</a>
+  </div>
+
+  <footer style="background-color: #003366; color: white; text-align: center; padding: 1rem; margin-top: 2rem;">
+    <p>&copy; 2025 ACK St Joseph Kamakwa Parish</p>
+    <p>
+      <a href="tel:+2547XXXXXX" style="color: white; text-decoration: underline;">Call Us</a> | 
+      <a href="mailto:email@parish.org" style="color: white; text-decoration: underline;">Email</a>
+    </p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("myNav");
+      if (nav.className === "responsive") {
+        nav.className = "";
+      } else {
+        nav.className = "responsive";
+      }
+    }
+  </script>
+</body>
+</html>

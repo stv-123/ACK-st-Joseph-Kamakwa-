@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - ACK St Joseph Kamakwa Parish</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 1rem;
+    }
+
+    /* Navigation Styles */
+    nav {
+      background-color: #003366;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    nav .logo {
+      color: white;
+      font-weight: bold;
+      font-size: 1.2rem;
+      padding: 1rem 0;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin: 0;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 1rem 0.5rem;
+      display: block;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      background-color: #00509e;
+    }
+
+    /* Hamburger menu */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      padding: 1rem 0;
+    }
+
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+      transition: 0.3s;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav ul {
+        position: absolute;
+        top: 56px; /* height of nav */
+        left: 0;
+        right: 0;
+        background-color: #003366;
+        flex-direction: column;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+      }
+
+      nav ul.open {
+        max-height: 300px; /* enough to show all menu items */
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    header {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 1.5rem 1rem;
+    }
+
+    .content {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #003366;
+      text-align: center;
+    }
+
+    p {
+      line-height: 1.6;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    a {
+      color: #003366;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .back-button {
+      display: block;
+      width: 90%;
+      max-width: 300px;
+      margin: 2rem auto;
+      text-align: center;
+      background-color: #00509e;
+      color: white;
+      text-decoration: none;
+      padding: 0.8rem;
+      border-radius: 8px;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .back-button:hover {
+      background-color: #003f7f;
+    }
+
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">ACK St Joseph Kamakwa</div>
+    <div class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" role="button" tabindex="0">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <ul id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="sermons.html">Sermons</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="ministries.html">Ministries</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="location.html">Location</a></li>
+      <li><a href="announcements.html">Announcements</a></li>
+      <li><a href="leadership.html">Leadership</a></li>
+      <li><a href="donate.html">Donate</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Contact Us</h1>
+  </header>
+
+  <div class="content">
+    <h2>Get in Touch</h2>
+    <p><strong>Parish Name:</strong> ACK St Joseph Kamakwa Parish</p>
+    <p><strong>Location:</strong> Kamakwa, Nyeri County, Kenya</p>
+    <p><strong>Email:</strong> <a href="mailto:info@ackkamakwa.org">info@ackkamakwa.org</a></p>
+    <p><strong>Phone:</strong> <a href="tel:+254720423265">+254 720 423 265</a></p>
+    <p><strong>Facebook:</strong> <a href="#" target="_blank">ACK St Joseph Kamakwa Parish</a></p>
+  </div>
+
+  <a href="index.html" class="back-button">⬅ Back to Home</a>
+
+  <footer>
+    <p>&copy; 2025 ACK St Joseph Kamakwa Parish</p>
+    <p><a href="tel:+254720423265">Call Us</a> | <a href="mailto:info@ackkamakwa.org">Email</a></p>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+    });
+
+    // Keyboard accessibility for menu toggle
+    menuToggle.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        navMenu.classList.toggle('open');
+      }
+    });
+  </script>
+
+</body>
+</html>

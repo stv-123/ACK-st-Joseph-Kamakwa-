@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Location - ACK St Joseph Kamakwa Parish</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      line-height: 1.6;
+    }
+
+    nav {
+      background-color: #2c3e50;
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      align-items: center;
+      user-select: none;
+    }
+
+    nav a {
+      color: white;
+      padding: 12px 16px;
+      text-decoration: none;
+      font-size: 1rem;
+      flex: 1 1 auto;
+      text-align: center;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover,
+    nav a.active,
+    nav a:focus-visible {
+      background-color: #4CAF50;
+      outline: none;
+    }
+
+    /* Hamburger button */
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: none;
+      font-size: 1.8rem;
+      color: white;
+      cursor: pointer;
+      padding: 12px 16px;
+      user-select: none;
+    }
+
+    .menu-toggle:focus-visible {
+      outline: 2px dashed #4CAF50;
+      outline-offset: 3px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-grow: 1;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 700px) {
+      nav {
+        justify-content: space-between;
+        padding: 0 10px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #2c3e50;
+        border-radius: 0 0 10px 10px;
+        margin-top: 0;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      nav a {
+        flex: none;
+        text-align: left;
+        padding: 12px 20px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+      }
+
+      nav a:first-child {
+        border-top: none;
+      }
+    }
+
+    h2 {
+      color: #2c3e50;
+      text-align: center;
+      padding-top: 20px;
+      font-size: 1.8rem;
+    }
+
+    .map-container {
+      width: 95%;
+      max-width: 800px;
+      margin: 20px auto;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+    }
+
+    .center {
+      text-align: center;
+      margin: 20px 0 40px;
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+      user-select: none;
+    }
+
+    .back-button:hover,
+    .back-button:focus-visible {
+      background-color: #388e3c;
+      outline: none;
+    }
+
+    .back-button:focus-visible {
+      outline: 2px dashed #4CAF50;
+      outline-offset: 3px;
+    }
+
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      user-select: none;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      nav a {
+        font-size: 0.9rem;
+        padding: 10px;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      .back-button {
+        font-size: 0.95rem;
+        padding: 10px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Navigation Bar -->
+  <nav role="navigation" aria-label="Main navigation">
+    <button 
+      class="menu-toggle" 
+      aria-expanded="false" 
+      aria-controls="primary-navigation" 
+      aria-label="Toggle menu"
+    >☰</button>
+    <div class="nav-links" id="primary-navigation">
+      <a href="index.html">Home</a>
+      <a href="sermons.html">Sermons</a>
+      <a href="events.html">Events</a>
+      <a href="ministries.html">Ministries</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="location.html" class="active">Location</a>
+      <a href="announcements.html">Announcements</a>
+      <a href="leadership.html">Leadership</a>
+    </div>
+  </nav>
+
+  <!-- Location Section -->
+  <section id="location">
+    <h2>Our Location</h2>
+    <div class="map-container">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.707541140405!2d36.928455174040806!3d-0.42696393528870574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18285fc19e6f098b%3A0xacd667683ba9bb85!2sACK%20KAMAKWA%20CHURCH!5e0!3m2!1sen!2ske!4v1747462265478!5m2!1sen!2ske" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade"
+        title="ACK Kamakwa Church Location"
+      ></iframe>
+    </div>
+
+    <div class="center">
+      <a href="index.html" class="back-button">⬅ Back to Home</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 ACK St Joseph Kamakwa Parish</p>
+    <p>
+      <a href="tel:+2547XXXXXX">Call Us</a> |
+      <a href="mailto:email@parish.org">Email</a>
+    </p>
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.getElementById('primary-navigation');
+
+    menuToggle.addEventListener('click', () => {
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', !expanded);
+      navLinks.classList.toggle('show');
+    });
+  </script>
+
+</body>
+</html>

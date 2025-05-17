@@ -1,0 +1,104 @@
+/* styles.css */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+  color: #333;
+}
+
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #006400;
+  color: white;
+}
+
+.ministries {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.ministry-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.ministry-card:hover {
+  transform: translateY(-5px);
+}
+
+.ministry-card h2 {
+  margin-top: 0;
+  color: #006400;
+}
+/* Bible Verse Widget */
+#bible-verse-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 260px;
+  background-color: #ffffff;
+  border: 2px solid #006400;
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+#bible-verse-widget h4 {
+  margin: 0 0 0.5rem 0;
+  color: #006400;
+  font-size: 1rem;
+}
+
+#bible-verse-widget p {
+  margin: 0;
+  line-height: 1.4;
+  font-style: italic;
+}
+#bible-verse-widget button {
+  margin-top: 10px;
+  background-color: #006400;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+#bible-verse-widget button:hover {
+  background-color: #004d00;
+}
+#announcements {
+  max-width: 800px;
+  margin: 30px auto;
+  background-color: white;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+#announcements h2 {
+  color: #003366;
+  margin-top: 0;
+}
+
+#announcement-list {
+  list-style-type: disc;
+  padding-left: 1.2rem;
+}
+
+#announcement-list li {
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+}

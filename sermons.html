@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sermon Archive | ACK St Joseph Kamakwa</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0 20px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 1.5rem 0;
+      text-align: center;
+    }
+    h1 {
+      margin: 1rem 0;
+      color: #003366;
+      text-align: center;
+    }
+
+    /* Navbar */
+    nav {
+      background-color: #00509e;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap; /* wrap nav links on small screens */
+      padding: 10px 0;
+      gap: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+      align-items: center;
+    }
+
+    /* Nav links container */
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      flex: 1 1 auto;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1em;
+      padding: 8px 12px; /* better tap target */
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+      white-space: nowrap;
+    }
+    nav a:hover,
+    nav a:focus {
+      background-color: #003f7d;
+      outline: none;
+      text-decoration: underline;
+    }
+
+    /* Hamburger Menu */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      padding: 10px;
+      margin-left: 10px;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+      border-radius: 2px;
+      transition: 0.4s;
+    }
+
+    /* Animate hamburger into X */
+    .hamburger.active div:nth-child(1) {
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .hamburger.active div:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active div:nth-child(3) {
+      transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    /* Sermons */
+    .sermon {
+      background: white;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .sermon h2 {
+      margin: 0 0 0.2rem 0;
+      color: #00509e;
+      cursor: pointer;
+      user-select: none;
+    }
+    .sermon h2:focus {
+      outline: 2px solid #00509e;
+      outline-offset: 3px;
+    }
+    .sermon-meta {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 0.8rem;
+    }
+    .sermon-notes {
+      display: none;
+      padding-top: 0.5rem;
+      border-top: 1px solid #ddd;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      white-space: pre-wrap;
+    }
+    .back-home {
+      text-align: center;
+      margin: 30px 0;
+    }
+    .back-home a {
+      background-color: #00509e;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+    .back-home a:hover,
+    .back-home a:focus {
+      background-color: #003f7d;
+      outline: none;
+    }
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    footer a {
+      color: white;
+      text-decoration: underline;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .nav-links {
+        width: 100%;
+        flex-direction: column;
+        display: none;
+        gap: 0;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      nav a {
+        padding: 12px;
+        border-radius: 0;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        border-bottom: 1px solid #004080;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 0 10px;
+      }
+      nav {
+        gap: 10px;
+      }
+      nav a {
+        font-size: 0.9em;
+        padding: 8px 10px;
+      }
+      .sermon h2 {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Sermon Archive</h1>
+  </header>
+
+  <nav>
+    <div class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" role="button" tabindex="0">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <div class="nav-links" id="nav-links">
+      <a href="services.html">Services</a>
+      <a href="contacts.html">Contact</a>
+      <a href="ministries.html">Ministries</a>
+      <a href="sermons.html" aria-current="page">Sermons</a>
+      <a href="events.html">Events</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="location.html">Location</a>
+      <a href="donate.html">Donate</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="sermon" tabindex="0">
+      <h2 tabindex="0" role="button" aria-expanded="false" aria-controls="notes1" id="title1" onclick="toggleNotes(this)" onkeydown="handleKey(event)">
+        God's Compassion
+      </h2>
+      <div class="sermon-meta">Date: May 11, 2025 | Preacher: Mrs Rebecca Wambui Kanyui</div>
+      <div class="sermon-notes" id="notes1" aria-labelledby="title1">
+        Today we explore God's compassion... [Reference from 1st Kings 17:17-24 (Elijah and the widow's son) and Luke 7:11-17 (Jesus raises the son of the widow from Nain)].
+      </div>
+    </section>
+
+    <section class="sermon" tabindex="0">
+      <h2 tabindex="0" role="button" aria-expanded="false" aria-controls="notes2" id="title2" onclick="toggleNotes(this)" onkeydown="handleKey(event)">
+        Living a Life of Service
+      </h2>
+      <div class="sermon-meta">Date: May 4, 2025 | Preacher: Rev. Mary Waiganjo</div>
+      <div class="sermon-notes" id="notes2" aria-labelledby="title2">
+        Serving others is a reflection of God’s love... [add your sermon notes here].
+      </div>
+    </section>
+  </main>
+
+  <div class="back-home">
+    <a href="index.html">⬅ Back to Home</a>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 ACK St Joseph Kamakwa Parish</p>
+    <p><a href="tel:+2547XXXXXX">Call Us</a> | 
+       <a href="mailto:email@parish.org">Email</a></p>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    function toggleNotes(titleElement) {
+      const notes = titleElement.nextElementSibling.nextElementSibling;
+      const isVisible = notes.style.display === 'block';
+      notes.style.display = isVisible ? 'none' : 'block';
+      titleElement.setAttribute('aria-expanded', !isVisible);
+    }
+
+    // Support keyboard toggle (Enter or Space) for accessibility on sermons
+    function handleKey(event) {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        toggleNotes(event.target);
+      }
+    }
+
+    // Toggle hamburger menu
+    function toggleMenu() {
+      hamburger.classList.toggle('active');
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', !expanded);
+      navLinks.classList.toggle('show');
+    }
+
+    hamburger.addEventListener('click', toggleMenu);
+    hamburger.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleMenu();
+      }
+    });
+  </script>
+</body>
+</html>

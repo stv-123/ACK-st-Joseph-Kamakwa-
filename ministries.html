@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Our Ministries | ACK St Joseph Kamakwa</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1rem;
+    }
+
+    /* Navigation Bar */
+    nav {
+      background-color: #2c3e50;
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      flex-wrap: wrap;
+    }
+
+    /* Nav links container */
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      flex: 1 1 auto;
+      gap: 0.5rem;
+    }
+
+    nav a {
+      color: white;
+      padding: 12px 16px;
+      text-decoration: none;
+      text-align: center;
+      font-weight: 600;
+      transition: background-color 0.3s;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+
+    nav a:hover,
+    nav a.active {
+      background-color: #4CAF50;
+    }
+
+    /* Hamburger menu button */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+      transition: 0.4s;
+      border-radius: 2px;
+    }
+
+    /* Transform hamburger to "X" when active */
+    .hamburger.active div:nth-child(1) {
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .hamburger.active div:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active div:nth-child(3) {
+      transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    /* Ministries section */
+    .ministries {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .ministry-card {
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    .ministry-card:hover {
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+      transform: translateY(-3px);
+    }
+
+    .ministry-card h2 {
+      color: #003366;
+      margin-top: 0;
+    }
+
+    .ministry-card p {
+      color: #333;
+    }
+
+    .back-home {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .back-home a {
+      background-color: #00509e;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+
+    .back-home a:hover {
+      background-color: #003e7e;
+    }
+
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: underline;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .nav-links {
+        width: 100%;
+        flex-direction: column;
+        display: none; /* hide nav links by default */
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      nav a {
+        padding: 12px;
+        border-radius: 0;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.6rem;
+      }
+
+      nav a {
+        font-size: 0.9rem;
+      }
+
+      .ministries {
+        padding: 1rem;
+      }
+
+      .ministry-card {
+        padding: 1rem;
+      }
+
+      .back-home a {
+        padding: 10px 16px;
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" role="button" tabindex="0">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <div class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="sermons.html">Sermons</a>
+      <a href="events.html">Events</a>
+      <a href="ministries.html" class="active">Ministries</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="location.html">Location</a>
+      <a href="announcements.html">Announcements</a>
+      <a href="leadership.html">Leadership</a>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Our Ministries</h1>
+    <p>Get involved in our church community through one of our active ministries.</p>
+  </header>
+
+  <section class="ministries">
+    <article class="ministry-card" tabindex="0">
+      <h2>Mother's Union (MU)</h2>
+      <p>A fellowship for Christian women dedicated to prayer, nurturing families, and community service.</p>
+    </article>
+
+    <article class="ministry-card" tabindex="0">
+      <h2>Kenya Anglican Men's Association (KAMA)</h2>
+      <p>A community of men growing in faith and leadership, supporting church and family life.</p>
+    </article>
+
+    <article class="ministry-card" tabindex="0">
+      <h2>Kenya Anglican Youth Organization (KAYO)</h2>
+      <p>Youth ministry focused on spiritual growth, mentorship, and leadership development.</p>
+    </article>
+
+    <article class="ministry-card" tabindex="0">
+      <h2>Children’s Ministry (Sunday School)</h2>
+      <p>Teaching children about Jesus through fun, engaging, and age-appropriate lessons every Sunday.</p>
+    </article>
+  </section>
+
+  <div class="back-home">
+    <a href="index.html">⬅ Back to Home</a>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 ACK St Joseph Kamakwa Parish</p>
+    <p><a href="tel:+2547XXXXXX">Call Us</a> | 
+       <a href="mailto:email@parish.org">Email</a></p>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    function toggleMenu() {
+      hamburger.classList.toggle('active');
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', !expanded);
+      navLinks.classList.toggle('show');
+    }
+
+    hamburger.addEventListener('click', toggleMenu);
+    hamburger.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleMenu();
+      }
+    });
+  </script>
+
+</body>
+</html>
