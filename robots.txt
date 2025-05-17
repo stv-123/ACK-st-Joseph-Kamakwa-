@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap:https://stv-123.github.io/ACK-st-Joseph-kamakwa-/sitemap.xml
+Sitemap: https://stv-123.github.io/ACK-st-Joseph-kamakwa-/sitemap.xml
