@@ -58,7 +58,6 @@
       background-color: #00509e;
     }
 
-    /* Hamburger menu */
     .menu-toggle {
       display: none;
       flex-direction: column;
@@ -74,7 +73,6 @@
       transition: 0.3s;
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
       nav ul {
         position: absolute;
@@ -102,7 +100,7 @@
       color: white;
       text-align: center;
       padding: 1.5rem 1rem;
-      margin-top: 56px; /* To avoid being hidden behind sticky nav */
+      margin-top: 56px;
     }
 
     h1 {
@@ -124,6 +122,7 @@
       border-radius: 10px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       transition: transform 0.2s;
+      cursor: pointer;
     }
 
     .gallery img:hover {
@@ -172,6 +171,55 @@
         font-size: 0.95rem;
       }
     }
+
+    /* Lightbox Styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox-content {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #fff;
+      animation: zoomIn 0.3s ease;
+    }
+
+    @keyframes zoomIn {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .close {
+      position: absolute;
+      top: 30px;
+      right: 50px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 2100;
+    }
+
+    .close:hover {
+      color: #ccc;
+    }
   </style>
 </head>
 <body>
@@ -205,7 +253,6 @@
     <img src="retreat.jpeg" alt="Church women retreat" />
     <img src="team building.jpeg" alt="Team building activities" />
     <img src="images/gallery4.jpg" alt="Community outreach" />
-    <!-- Add more images as needed -->
   </div>
 
   <div class="back-home">
@@ -220,7 +267,14 @@
     </p>
   </footer>
 
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img" alt="">
+  </div>
+
   <script>
+    // Responsive menu
     const menuToggle = document.getElementById('menu-toggle');
     const navMenu = document.getElementById('nav-menu');
 
@@ -234,7 +288,30 @@
         navMenu.classList.toggle('open');
       }
     });
+
+    // Lightbox functionality
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.querySelector('.close');
+
+    document.querySelectorAll('.gallery img').forEach(image => {
+      image.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = image.src;
+        lightboxImg.alt = image.alt;
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+      }
+    });
   </script>
-  
+
 </body>
 </html>
