@@ -11,7 +11,6 @@
       background-color: #f4f4f4;
     }
 
-    /* Navigation Styles */
     nav {
       background-color: #003366;
       position: sticky;
@@ -38,10 +37,6 @@
       margin: 0;
       padding: 0;
       flex-wrap: wrap;
-    }
-
-    nav ul li {
-      margin: 0;
     }
 
     nav ul li a {
@@ -116,30 +111,19 @@
       margin: auto;
     }
 
-    .gallery img {
+    .gallery img,
+    .gallery video {
       width: 100%;
-      height: auto;
       border-radius: 10px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       transition: transform 0.2s;
       cursor: pointer;
     }
 
-    .gallery img:hover {
+    .gallery img:hover,
+    .gallery video:hover {
       transform: scale(1.03);
     }
-    .gallery-item video {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
-  cursor: pointer;
-}
-
-.gallery-item video:hover {
-  transform: scale(1.03);
-}
-
 
     .back-home {
       text-align: center;
@@ -268,22 +252,11 @@
     <img src="games.jpg" alt="gaming" />
     <img src="learning.jpg" alt="children learning" />
     <img src="S.school.jpg" alt="Sunday school" />
-  </div>
-  <!-- Videos -->
-  <div class="gallery-item">
-    <video controls>
-      <source src="videos/choir.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
 
-  <div class="gallery-item">
-    <video controls>
-      <source src="videos/sermon_snippet.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+    <!-- Videos -->
+    <video src="videos/choir.mp4" type="video/mp4" controls></video>
+    <video src="videos/sermon_snippet.mp4" type="video/mp4" controls></video>
   </div>
-</div>
 
   <div class="back-home">
     <a href="index.html">⬅ Back to Home</a>
@@ -301,6 +274,7 @@
   <div id="lightbox" class="lightbox">
     <span class="close">&times;</span>
     <img class="lightbox-content" id="lightbox-img" alt="">
+    <video class="lightbox-content" id="lightbox-video" controls></video>
   </div>
 
   <script>
@@ -319,26 +293,43 @@
       }
     });
 
-    // Lightbox functionality
+    // Lightbox logic
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxVideo = document.getElementById('lightbox-video');
     const closeBtn = document.querySelector('.close');
 
+    // Handle images
     document.querySelectorAll('.gallery img').forEach(image => {
       image.addEventListener('click', () => {
         lightbox.style.display = 'flex';
+        lightboxImg.style.display = 'block';
+        lightboxVideo.style.display = 'none';
         lightboxImg.src = image.src;
         lightboxImg.alt = image.alt;
       });
     });
 
+    // Handle videos
+    document.querySelectorAll('.gallery video').forEach(video => {
+      video.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.style.display = 'none';
+        lightboxVideo.style.display = 'block';
+        lightboxVideo.src = video.currentSrc || video.querySelector('source').src;
+        lightboxVideo.play();
+      });
+    });
+
     closeBtn.addEventListener('click', () => {
       lightbox.style.display = 'none';
+      lightboxVideo.pause();
     });
 
     window.addEventListener('click', (e) => {
       if (e.target === lightbox) {
         lightbox.style.display = 'none';
+        lightboxVideo.pause();
       }
     });
   </script>
